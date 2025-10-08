@@ -7,7 +7,7 @@ que representa el tablero de tetris.
 import numpy as np
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+# Do not configure logging at import time; callers should configure logging as needed.
 
 class Matrix:
     image: np.ndarray

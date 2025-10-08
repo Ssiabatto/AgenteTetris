@@ -289,11 +289,8 @@ class Pieza:
         """
         return self._zone
     
-    def get_tipo(self) -> Tipo:
-        """
-        Regresa el tipo de la pieza.
-        """
-        return self._tipo.name
+    # NOTE: get_tipo defined further below returns the Tipo; keep that one
+    # and remove this duplicate which returned a string name.
 
     def get_orientacion(self):
         """

@@ -1,5 +1,5 @@
-from .casilla import *
-from .punto import *
+from .square import Square
+from .punto import Punto
 from enum import Enum
 
 class Tipo(Enum):
@@ -57,10 +57,10 @@ def instancia_i(pos):
     p2 = Punto(pos.get_x() - 1, pos.get_y())
     p3 = Punto(pos.get_x() + 1, pos.get_y())
     p4 = Punto(pos.get_x() + 2, pos.get_y())
-    c1 = Casilla(p2)
-    c2 = Casilla(pos)
-    c3 = Casilla(p3)
-    c4 = Casilla(p4)
+    c1 = Square(p2)
+    c2 = Square(pos)
+    c3 = Square(p3)
+    c4 = Square(p4)
     return [c1,c2,c3,c4]
 
 def instancia_rs(pos):
@@ -71,10 +71,10 @@ def instancia_rs(pos):
     p1 = Punto(pos.get_x() - 1, pos.get_y() + 1)
     p2 = Punto(pos.get_x(), pos.get_y() + 1)
     p4 = Punto(pos.get_x() + 1, pos.get_y())
-    c1 = Casilla(p1)
-    c2 = Casilla(p2)
-    c3 = Casilla(pos)
-    c4 = Casilla(p4)
+    c1 = Square(p1)
+    c2 = Square(p2)
+    c3 = Square(pos)
+    c4 = Square(p4)
     return [c1,c2,c3,c4]
 
 def instancia_lg(pos):
@@ -85,10 +85,10 @@ def instancia_lg(pos):
     p1 = Punto(pos.get_x(), pos.get_y() - 1)
     p3 = Punto(pos.get_x() + 1, pos.get_y())
     p4 = Punto(pos.get_x() + 2, pos.get_y())
-    c1 = Casilla(p1)
-    c2 = Casilla(pos)
-    c3 = Casilla(p3)
-    c4 = Casilla(p4)
+    c1 = Square(p1)
+    c2 = Square(pos)
+    c3 = Square(p3)
+    c4 = Square(p4)
     return [c1,c2,c3,c4]
 
 def instancia_t(pos):
@@ -99,10 +99,10 @@ def instancia_t(pos):
     p1 = Punto(pos.get_x() - 1, pos.get_y())
     p3 = Punto(pos.get_x(), pos.get_y() - 1)
     p4 = Punto(pos.get_x() + 1, pos.get_y())
-    c1 = Casilla(p1)
-    c2 = Casilla(pos)
-    c3 = Casilla(p3)
-    c4 = Casilla(p4)
+    c1 = Square(p1)
+    c2 = Square(pos)
+    c3 = Square(p3)
+    c4 = Square(p4)
     return [c1,c2,c3,c4]
 
 def instancia_rg(pos):
@@ -113,10 +113,10 @@ def instancia_rg(pos):
     p1 = Punto(pos.get_x() - 2, pos.get_y())
     p2 = Punto(pos.get_x() - 1, pos.get_y())
     p4 = Punto(pos.get_x(), pos.get_y() - 1)
-    c1 = Casilla(p1)
-    c2 = Casilla(p2)
-    c3 = Casilla(pos)
-    c4 = Casilla(p4)
+    c1 = Square(p1)
+    c2 = Square(p2)
+    c3 = Square(pos)
+    c4 = Square(p4)
     return [c1,c2,c3,c4]
 
 def instancia_ls(pos):
@@ -127,10 +127,10 @@ def instancia_ls(pos):
     p1 = Punto(pos.get_x() - 1, pos.get_y())
     p3 = Punto(pos.get_x(), pos.get_y() + 1)
     p4 = Punto(pos.get_x() + 1, pos.get_y() + 1)
-    c1 = Casilla(p1)
-    c2 = Casilla(pos)
-    c3 = Casilla(p3)
-    c4 = Casilla(p4)
+    c1 = Square(p1)
+    c2 = Square(pos)
+    c3 = Square(p3)
+    c4 = Square(p4)
     return [c1,c2,c3,c4]
 
 def instancia_sq(pos):
@@ -141,10 +141,10 @@ def instancia_sq(pos):
     p2 = Punto(pos.get_x() + 1, pos.get_y())
     p3 = Punto(pos.get_x(), pos.get_y() + 1)
     p4 = Punto(pos.get_x() + 1, pos.get_y() + 1)
-    c1 = Casilla(pos)
-    c2 = Casilla(p2)
-    c3 = Casilla(p3)
-    c4 = Casilla(p4)
+    c1 = Square(pos)
+    c2 = Square(p2)
+    c3 = Square(p3)
+    c4 = Square(p4)
     return [c1,c2,c3,c4]
 
 def get_casillas(tipo, posicion):

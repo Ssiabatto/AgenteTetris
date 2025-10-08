@@ -6,27 +6,22 @@ import pyautogui
 import time
 
 class Tetris:
-    """ Representa un juego de tetris con todos sus componentes."""
-    def __init__(self, matrix:np.ndarray=None, next:np.ndarray=None, hold:np.ndarray=None):
-        """
-        Parameters
-        ----------
-        tablero : Tablero 
-                Es un tablero por si el objeto es clonado. 22x10
-        """
-        self.consagg = -0.458507 # -0.510066        
-        self.conslines =  0.429457 # 0.760666       
-        self.consholes = -0.454487 # -0.35663            
-        self.consbump = -0.169442 # -0.184483       
-        self.score = None
-        self.current_selected_move = None
-        self.possible_moves_scored = None
-        self.highest_score = None
+    def __init__(self, matrix: np.ndarray = None, next: np.ndarray = None, hold: np.ndarray = None):
+        # Initialize the weights for scoring the game state
+        self.consagg = -0.798752914564018  # Weight for aggregate height
+        self.conslines = 0.522287506868767  # Weight for complete lines
+        self.consholes = -0.24921408023878  # Weight for holes
+        self.consbump = -0.164626498034284  # Weight for bumpiness
+        self.score = None  # Initialize the score
+        self.current_selected_move = None  # Initialize the current selected move
+        self.possible_moves_scored = None  # Initialize the possible moves scored
+        self.highest_score = None  # Initialize the highest score
         
         if matrix is None:
+            # Raise an exception if no board matrix is provided
             exception = Exception("No se puede crear un juego sin un tablero")
             raise exception
-        self._tablero = Board(matrix)
+        self._tablero = Board(matrix)  # Initialize the board with the provided matrix
 
     def print_board(self) -> None:
         """
